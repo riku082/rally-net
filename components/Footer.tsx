@@ -105,7 +105,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center justify-center sm:justify-start space-x-3 text-gray-400">
                   <MapPin className="w-4 h-4" />
-                  <span>東京都渋谷区1-2-3</span>
+                  <span></span>
                 </div>
               </div>
             </motion.div>

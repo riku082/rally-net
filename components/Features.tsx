@@ -28,14 +28,38 @@ export default function Features() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-gray-800 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 tracking-tight">
           掲示板機能
         </h2>
-        {/* 掲示板機能の画面イメージ（タイトル直下） */}
-        <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-emerald-200 mb-10">
-          <img src="/投稿画面.png" alt="投稿画面" className="object-contain rounded-xl shadow-lg w-[240px] h-[440px] bg-white flex-shrink-0" />
-          <img src="/コメント画面.png" alt="コメント画面" className="object-contain rounded-xl shadow-lg w-[240px] h-[440px] bg-white flex-shrink-0" />
+        {/* メインの機能紹介（画像と説明文） */}
+        <div className="flex flex-row items-start gap-4 md:gap-8 mb-16 overflow-x-auto">
+          <div className="flex-shrink-0">
+            <img
+              src="/投稿画面.png"
+              alt="掲示板機能のメイン画面"
+              className="object-contain rounded-xl shadow-lg w-[160px] h-[300px] md:w-[280px] md:h-[520px] bg-white"
+            />
+          </div>
+          <div className="flex-shrink-0">
+            <img
+              src="/コメント画面.png"
+              alt="コメント画面"
+              className="object-contain rounded-xl shadow-lg w-[160px] h-[300px] md:w-[280px] md:h-[520px] bg-white"
+            />
+          </div>
+          <div className="flex-shrink-0 w-[240px] md:w-1/2 text-left">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-gray-800">
+              バドミントン専用の交流の場
+            </h3>
+            <p className="text-sm md:text-lg text-gray-600 leading-relaxed">
+              日々の練習の成果や試合の感想、バドミントンに関する疑問や知識を気軽に共有できる専用掲示板です。
+              共感できる投稿には「いいね」で気持ちを伝えたり、「リツイート」で仲間と情報を広めることができます。
+              活発な交流を通じて、あなたのバドミントンライフをさらに充実させましょう。
+            </p>
+          </div>
         </div>
+
+        {/* 各機能カード */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
@@ -44,16 +68,16 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="h-full"
+              className="h-full text-left"
             >
-              <div className="p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow flex flex-col items-center text-center h-full border border-emerald-50">
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-6 shadow-md`}>
-                  <feature.icon className="w-8 h-8 text-white" />
+              <div className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full border border-gray-100">
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-md flex items-center justify-center mb-5 shadow-sm">
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800 tracking-tight">
+                <h3 className="text-xl font-bold mb-2 text-gray-800 tracking-tight">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 text-base leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed flex-grow">
                   {feature.description}
                 </p>
               </div>

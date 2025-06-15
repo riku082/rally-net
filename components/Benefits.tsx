@@ -14,7 +14,7 @@ const benefits = [
     icon: Zap,
     title: '使いやすさ',
     description: '直感的なUIで、初心者から上級者まで誰でも簡単に使えます。',
-    features: ['シンプルなインターフェース', 'ワンタップ予約', 'スマート通知']
+    features: ['シンプルなインターフェース', 'ワンタップ登録', 'スマート通知']
   },
   {
     icon: Heart,
